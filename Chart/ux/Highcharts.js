@@ -636,10 +636,11 @@ Ext.define("Chart.ux.Highcharts", {
                 return;
             }
         }
-
-        for( i = 0; i < _this.series.length; i++) {
-            if(!_this.series[i].visible)
-                _this.chart.series[i].hide();
+        if (_this.series) {
+            for( i = 0; i < _this.series.length; i++) {
+                if(!_this.series[i].visible)
+                    _this.chart.series[i].hide();
+            }
         }
 
         // Refresh the data only if it is not loading
